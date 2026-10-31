@@ -1,0 +1,29 @@
+{
+  "name": "fm-skilled-elearning-landing-page",
+  "version": "1.0.0",
+  "description": "A solution to the Frontend Mentor challenge [Skilled e-learning landing page](https://www.frontendmentor.io/challenges/skilled-elearning-landing-page-S1ObDrZ8q) using Eleventy site generator.",
+  "scripts": {
+    "build": "pnx @11ty/eleventy",
+    "start": "pnx @11ty/eleventy --serve --quiet"
+  },
+  "keywords": [],
+  "author": "John F MacDonald",
+  "license": "ISC",
+  "homepage": "https://github.com/logicalplum/fm-skilled-elearning-landing-page#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/logicalplum/fm-skilled-elearning-landing-page"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.16.1",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.16.1",
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.7"
+  }
+}

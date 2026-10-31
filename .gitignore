@@ -16,4 +16,6 @@
 .prettierignore
 
 # Working files not to be committed
+node_modules/
 etc/
+*.log
