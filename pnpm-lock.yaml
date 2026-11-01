@@ -165,10 +165,13 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
       '@11ty/eleventy':
         specifier: ^3.1.7
         version: 3.1.7
+      tailwindcss-preflight:
+        specifier: ^1.1.1
+        version: 1.1.1
 
 packages:
 
@@ -592,6 +595,9 @@ packages:
     resolution: {integrity: sha512-uCC2VHvQRYu+lMh4My/sFNmF2klFymLX1wHJeXnbEJERpV/ZsVuonzerjfrGpIGF7LBVa1O7i9kjiWvJiFck8g==}
     engines: {node: '>=0.10.0'}
 
+  tailwindcss-preflight@1.1.1:
+    resolution: {integrity: sha512-2rRLKX0zB9X7pBwTszQjvzwtqekE7Y+XBkplc3uCm4CNI2tzLlcX/25Ezt7d0zGdHouM/xJUJacyML3j02yyjw==}
+
   tinyglobby@0.2.17:
     resolution: {integrity: sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==}
     engines: {node: '>=12.0.0'}
@@ -610,8 +616,8 @@ packages:
   urlpattern-polyfill@10.1.0:
     resolution: {integrity: sha512-IGjKp/o0NL3Bso1PymYURCJxMPNAf/ILOpendP9f5B6e1rTJgdgiOvgfoT8VxCAdY+Wisb9uhGaJJf3yZ2V9nw==}
 
-  ws@8.22.0:
-    resolution: {integrity: sha512-Ydggc987+RO0AnWtZ/7Wq9FtNvcrL1b/RO0ud9mWjUPgDrsAAwQSF51sm2hm1XofbU/4jkpGEsLFsZZxU+1DOg==}
+  ws@8.22.1:
+    resolution: {integrity: sha512-oyL6OPYme/CmiFvNuGzeoxCJ4nOrZE2O1FwM9MWM1AsGri6nLXB2pg+lNA8aLeXMSav0J6eIVS1j6vUPzUtK9g==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -653,7 +659,7 @@ snapshots:
       send: 1.2.1
       ssri: 11.0.0
       urlpattern-polyfill: 10.1.0
-      ws: 8.22.0
+      ws: 8.22.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -1051,6 +1057,8 @@ snapshots:
 
   strip-bom-string@1.0.0: {}
 
+  tailwindcss-preflight@1.1.1: {}
+
   tinyglobby@0.2.17:
     dependencies:
       fdir: 6.5.0(picomatch@4.0.7)
@@ -1064,4 +1072,4 @@ snapshots:
 
   urlpattern-polyfill@10.1.0: {}
 
-  ws@8.22.0: {}
+  ws@8.22.1: {}
