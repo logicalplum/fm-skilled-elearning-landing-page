@@ -1,56 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="./" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ '/assets/images/favicon-32x32.png' | url}}"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="{{ 'assets/main.css' | url }}" />
 
-  <link rel="stylesheet" href="./assets/main.css">
-  
-  <title>Skilled e-learning landing page | Frontend Mentor</title>
-</head>
-<body>
-
-  <h1>
-    Get Started
-  </h1>
-
-  Maximize skill, minimize budget
-
-  Our modern courses across a range of in-demand skills will give you the 
-  knowledge you need to live the life you want.
-
-  Get Started
-
-  Check out our most popular courses!
-
-  Animation
-  Learn the latest animation techniques to create stunning motion 
-  design and captivate your audience.
-  Get Started
-
-  Design
-  Create beautiful, usable interfaces to help shape the future of 
-  how the web looks.
-  Get Started
-
-  Photography
-  Explore critical fundamentals like lighting, composition, and focus 
-  to capture exceptional photos.
-  Get Started
-
-  Crypto
-  All you need to know to get started investing in crypto. Go from beginner 
-  to advanced with this 54 hour course.
-  Get Started
-
-  Business
-  A step-by-step playbook to help you start, scale, and sustain your business 
-  without outside investment.
-  Get Started
-
-  Get Started
-
-</body>
+    <title>Skilled e-learning landing page | Frontend Mentor</title>
+  </head>
+  <body>
+    <header>
+      <nav class="container" aria-label="primary">
+        <a>
+          <img class="logo" src="assets/images/logo-dark.svg" alt="skilled" />
+        </a>
+        <button class="btn btn--black" role="link" data-url="/get-started">
+          Get Started
+        </button>
+      </nav>
+    </header>
+    <main>
+      <div class="hero">
+        <div class="hero__prose">
+          <h1>Maximize skill, minimize budget</h1>
+          <p>
+            Our modern courses across a range of in-demand skills will give you
+            the knowledge you need to live the life you want.
+          </p>
+          <button class="btn btn--orange" role="link">Get Started</button>
+        </div>
+        <div class="hero__decoration">{% include 'heroImage' %}</div>
+      </div>
+      <div class="content">
+        <section class="container grid">
+          <h2>Check out our most popular courses!</h2>
+          {%- for course in courses %}
+          <article>
+            <img src="assets/images/{{ course.icon }}" alt="">
+            <h3>{{ course.name }}</h3>
+            <p>{{ course.text }}</p>
+            <a class="btn-link">Get Started</a>
+          </article>
+          {%- endfor %}
+        </section>
+      </div>
+    </main>
+    <footer class="">
+      <nav class="container">
+        <a>
+          <img class="logo" src="assets/images/logo-light.svg" alt="skilled" />
+        </a>
+        <button class="btn btn--purple" role="link" data-url="/get-started">
+          Get Started
+        </button>
+      </nav>
+    </footer>
+  </body>
 </html>
