@@ -24,6 +24,8 @@
     "type": "module",
     "devDependencies": {
         "@11ty/eleventy": "^3.1.7",
+        "@shopify/prettier-plugin-liquid": "^1.11.3",
+        "prettier": "^3.9.10",
         "tailwindcss-preflight": "^1.1.1"
     }
 }
