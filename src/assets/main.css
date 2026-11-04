@@ -191,4 +191,8 @@ article.card a {
   .container {
     padding: 0 var(--space-2000);
   }
+  .hero {
+    column-gap: var(--space-400);
+    margin: -200px 0 -64px;
+  }
 }
