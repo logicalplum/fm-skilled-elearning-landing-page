@@ -1,19 +1,173 @@
-@import './vendor/tailwindcss-preflight/preflight.css';
+@import "./vendor/tailwindcss-preflight/preflight.css";
 
 @font-face {
-    font-family: 'Plus Jakarta Sans';
-    src:
-        local('Outfit'),
-        url(./fonts/PlusJakartaSans-VariableFont_wght.woff2) format('woff2');
-    font-weight: 300 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  src:
+    local("Outfit"),
+    url(./fonts/PlusJakartaSans-VariableFont_wght.woff2) format("woff2");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
-  --font-preset-1: normal 16px/1.4 "Plus Jakarta Sans", sans-serif;
+  --font-heading-3xl: 800 56px/1.2 "Plus Jakarta Sans", sans-serif;
+  --font-heading-2xl: 800 40px/1.2 "Plus Jakarta Sans", sans-serif;
+  --font-heading-xl: 800 32px/1.2 "Plus Jakarta Sans", sans-serif;
+  --font-heading-lg: 800 24px/1.2 "Plus Jakarta Sans", sans-serif;
+  --font-heading-base: 800 20px/1.2 "Plus Jakarta Sans", sans-serif;
+  --font-body-base: 500 18px/1.5 "Plus Jakarta Sans", sans-serif;
+  --font-body-sm: 700 16px/1.5 "Plus Jakarta Sans", sans-serif;
+  --font-button-base: 700 18px/1.5 "Plus Jakarta Sans", sans-serif;
+  --space-100: 8px;
+  --space-150: 12px;
+  --space-200: 16px;
+  --space-250: 20px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-500: 40px;
+  --space-550: 44px;
+  --space-600: 48px;
+  --space-700: 56px;
+  --space-750: 60px;
+  --space-800: 64px;
+  --space-1000: 80px;
+  --space-1600: 128px;
+  --space-1800: 144px;
+  --space-2000: 160px;
+  --color-blue-900: #13183f;
+  --color-blue-600: #666ca3;
+  --color-pink-600: #f74780;
+  --color-pink-300: #ffa7c3;
+  --color-gray: #83869a;
+  --color-white: #ffffff;
+  --color-black: #181c2c;
+  --gradient-orange: linear-gradient(#ff6548, #f02aa6);
+  --gradient-purple: linear-gradient(#4851ff, #f02aa6);
+  --gradient-light: linear-gradient(#ffffff, #f0f1ff);
 }
 
 html {
-  font: var(--font-preset-1, initial);
+  font: var(--font-regular-14, initial);
+  color: var(--color-blue-900, initial);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 var(--space-250);
+}
+
+.btn {
+  padding: var(--space-200) var(--space-400);
+  font: var(--font-button-base);
+  border-radius: var(--space-400);
+  color: var(--color-white);
+}
+
+.bg-light {
+  background: var(--gradient-light);
+}
+.bg-dark {
+  background: var(--color-blue-900);
+}
+.btn--black {
+  color: var(--color-white);
+  background: var(--color-blue-900);
+}
+.btn--purple {
+  color: var(--color-white);
+  background: var(--gradient-purple);
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-300) 0;
+}
+
+.hero {
+  display: grid;
+  gap: var(--space-600);
+  margin: var(--space-800) 0;
+}
+
+.hero h1 {
+  margin-bottom: var(--space-300);
+  font: var(--font-heading-2xl);
+}
+.hero p {
+  margin-bottom: var(--space-300);
+  font: var(--font-body-base);
+  color: var(--color-gray);
+}
+
+.hero .btn {
+  background: var(--gradient-orange);
+}
+
+.hero img {
+  width: 100%;
+}
+
+.content {
+  display: grid;
+  row-gap: var(--space-750);
+  column-gap: var(--space-300);
+  background: var(--gradient-light);
+  padding-top: var(--space-800);
+  padding-bottom: var(--space-1000);
+}
+
+.card {
+  position: relative;
+  border-radius: 15px;
+}
+
+h2.card {
+  padding: var(--space-400);
+  color: var(--color-white);
+  background: var(--gradient-orange);
+  font: var(--font-heading-lg);
+}
+
+article.card {
+  padding: var(--space-800) var(--space-400) var(--space-500);
+  background: var(--color-white);
+}
+
+article.card img {
+  position: absolute;
+  top: -28px;
+}
+
+article.card h3 {
+  font: var(--font-heading-base);
+  color: var(--color-blue-900);
+  margin-bottom: var(--space-300);
+}
+
+article.card p {
+  color: var(--color-gray);
+  font: var(--font-body-sm);
+  margin-bottom: var(--space-300);
+}
+
+article.card a {
+  font: var(--font-button-base);
+  color: var(--color-pink-600);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-550);
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding: 0 var(--space-2000);
+  }
 }

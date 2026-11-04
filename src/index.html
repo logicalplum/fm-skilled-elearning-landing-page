@@ -11,13 +11,13 @@
       href="{{ '/assets/images/favicon-32x32.png' | url}}"
     />
 
-    <link rel="stylesheet" href="{{ 'assets/main.css' | url }}" />
+    <link rel="stylesheet" href="assets/main.css" />
 
     <title>Skilled e-learning landing page | Frontend Mentor</title>
   </head>
   <body>
-    <header>
-      <nav class="container" aria-label="primary">
+    <header class="container">
+      <nav class="banner" aria-label="primary">
         <a>
           <img class="logo" src="assets/images/logo-dark.svg" alt="skilled" />
         </a>
@@ -27,7 +27,7 @@
       </nav>
     </header>
     <main>
-      <div class="hero">
+      <section class="container hero">
         <div class="hero__prose">
           <h1>Maximize skill, minimize budget</h1>
           <p>
@@ -36,24 +36,22 @@
           </p>
           <button class="btn btn--orange" role="link">Get Started</button>
         </div>
-        <div class="hero__decoration">{% include 'heroImage' %}</div>
-      </div>
-      <div class="content">
-        <section class="container grid">
-          <h2>Check out our most popular courses!</h2>
-          {%- for course in courses %}
-          <article>
-            <img src="assets/images/{{ course.icon }}" alt="">
-            <h3>{{ course.name }}</h3>
-            <p>{{ course.text }}</p>
-            <a class="btn-link">Get Started</a>
-          </article>
-          {%- endfor %}
-        </section>
-      </div>
+        <div class="hero__illustration">{% include 'heroImage' %}</div>
+      </section>
+      <section class="container content">
+        <h2 class="card card--header">Check out our most popular courses!</h2>
+        {%- for course in courses %}
+        <article class="card">
+          <img src="assets/images/{{ course.icon }}" alt="" />
+          <h3>{{ course.name }}</h3>
+          <p>{{ course.text }}</p>
+          <a class="article-link">Get Started</a>
+        </article>
+        {%- endfor %}
+      </section>
     </main>
-    <footer class="">
-      <nav class="container">
+    <footer class="container bg-dark">
+      <nav class="banner banner--dark">
         <a>
           <img class="logo" src="assets/images/logo-light.svg" alt="skilled" />
         </a>
