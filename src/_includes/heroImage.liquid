@@ -1,5 +1,5 @@
 {% # assign variables for reused strings that might need to change %}
-{% assign prefix = 'assets/images/image-hero' %}
+{% assign prefix = 'assets/images/hero-image' %}
 {% assign desktop = '1440px' %}
 {% assign tablet = '768px' %}
 <picture>
@@ -10,8 +10,8 @@
   />
   <source
     media="(min-width: {{ desktop }})"
-    type="image/png"
-    srcset="{{ prefix }}-desktop.png, {{ prefix }}-desktop@2x.png 2x"
+    type="image/jpeg"
+    srcset="{{ prefix }}-desktop.jpg, {{ prefix }}-desktop@2x.jpg 2x"
   />
   <source
     media="(min-width: {{ tablet }})"
@@ -20,19 +20,21 @@
   />
   <source
     media="(min-width: {{ tablet }})"
-    type="image/png"
-    srcset="{{ prefix }}-tablet.png, {{ prefix }}-tablet@2x.png 2x"
+    type="image/jpeg"
+    srcset="{{ prefix }}-tablet.jpg, {{ prefix }}-tablet@2x.jpg 2x"
   />
   <source
     type="image/webp"
     srcset="{{ prefix }}-mobile.webp, {{ prefix }}-mobile@2x.webp 2x"
   />
   <source
-    type="image/png"
-    srcset="{{ prefix }}-mobile.png, {{ prefix }}-mobile@2x.png 2x"
+    type="image/jpeg"
+    srcset="{{ prefix }}-mobile.jpg, {{ prefix }}-mobile@2x.jpg 2x"
   />
   <img
-    src="{{ prefix }}-mobile@2x.png"
+    src="{{ prefix }}-mobile@2x.jpg"
     alt="Woman sipping hot drink while studying laptop and text bubbles “29k members” and “1451 course hours”"
   />
 </picture>
+
+

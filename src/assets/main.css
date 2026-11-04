@@ -11,14 +11,15 @@
 }
 
 :root {
-  --font-heading-3xl: 800 56px/1.2 "Plus Jakarta Sans", sans-serif;
-  --font-heading-2xl: 800 40px/1.2 "Plus Jakarta Sans", sans-serif;
-  --font-heading-xl: 800 32px/1.2 "Plus Jakarta Sans", sans-serif;
-  --font-heading-lg: 800 24px/1.2 "Plus Jakarta Sans", sans-serif;
-  --font-heading-base: 800 20px/1.2 "Plus Jakarta Sans", sans-serif;
-  --font-body-base: 500 18px/1.5 "Plus Jakarta Sans", sans-serif;
-  --font-body-sm: 700 16px/1.5 "Plus Jakarta Sans", sans-serif;
-  --font-button-base: 700 18px/1.5 "Plus Jakarta Sans", sans-serif;
+  --font-extrabold-3xl: 800 56px/1.2 "Plus Jakarta Sans", sans-serif;
+  --font-extrabold-2xl: 800 40px/1.2 "Plus Jakarta Sans", sans-serif;
+  --font-extrabold-xl: 800 32px/1.2 "Plus Jakarta Sans", sans-serif;
+  --font-extrabold-lg: 800 24px/1.2 "Plus Jakarta Sans", sans-serif;
+  --font-extrabold-base: 800 20px/1.2 "Plus Jakarta Sans", sans-serif;
+  --font-medium-base: 500 18px/1.5 "Plus Jakarta Sans", sans-serif;
+  --font-medium-xs: 500 14px/1.2 "Plus Jakarta Sans", sans-serif;
+  --font-bold-sm: 700 16px/1.5 "Plus Jakarta Sans", sans-serif;
+  --font-bold-base: 700 18px/1.5 "Plus Jakarta Sans", sans-serif;
   --space-100: 8px;
   --space-150: 12px;
   --space-200: 16px;
@@ -58,12 +59,12 @@ html {
   width: 100%;
   max-width: 1440px;
   padding: 0 var(--space-250);
-  overflow-x: hidden; /* hide illustration overflow */
+  overflow: hidden; /* hide illustration overflow */
 }
 
 .btn {
   padding: var(--space-200) var(--space-400);
-  font: var(--font-button-base);
+  font: var(--font-bold-base);
   border-radius: var(--space-400);
   color: var(--color-white);
 }
@@ -94,15 +95,16 @@ html {
   display: grid;
   gap: var(--space-600);
   margin: var(--space-800) 0;
+  overflow: visible;
 }
 
 .hero h1 {
   margin-bottom: var(--space-300);
-  font: var(--font-heading-2xl);
+  font: var(--font-extrabold-2xl);
 }
 .hero p {
   margin-bottom: var(--space-300);
-  font: var(--font-body-base);
+  font: var(--font-medium-base);
   color: var(--color-gray);
 }
 
@@ -110,8 +112,54 @@ html {
   background: var(--gradient-orange);
 }
 
-.hero img {
+.hero__illustration {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  overflow: visible;
+}
+
+.hero__illustration picture {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.hero__illustration img {
   width: 100%;
+  object-fit: contain;
+}
+
+.badge {
+  position: absolute;
+  width: 33%;
+  min-width: max-content;
+  padding: var(--space-200) var(--space-250);
+  background: var(--color-white);
+  border-radius: var(--space-150);
+  box-shadow: 0px 34px 54px rgba(6, 22, 141, 0.158854);
+  z-index: 1;
+}
+
+.badge__label {
+  font: var(--font-medium-xs);
+  margin-bottom: var(--space-100);
+  color: var(--color-gray);
+}
+.badge__value {
+  font: var(--font-extrabold-lg);
+}
+
+.hero__illustration .badge--members {
+  bottom: 75%;
+  right: 0;
+}
+
+.hero__illustration .badge--hours {
+  padding-right: var(--space-400);
+  left: 0;
+  top: 75%;
 }
 
 .content {
@@ -132,7 +180,7 @@ h2.card {
   padding: var(--space-400);
   color: var(--color-white);
   background: var(--gradient-orange);
-  font: var(--font-heading-lg);
+  font: var(--font-extrabold-lg);
 }
 
 article.card {
@@ -146,19 +194,19 @@ article.card img {
 }
 
 article.card h3 {
-  font: var(--font-heading-base);
+  font: var(--font-extrabold-base);
   color: var(--color-blue-900);
   margin-bottom: var(--space-300);
 }
 
 article.card p {
   color: var(--color-gray);
-  font: var(--font-body-sm);
+  font: var(--font-bold-sm);
   margin-bottom: var(--space-300);
 }
 
 article.card a {
-  font: var(--font-button-base);
+  font: var(--font-bold-base);
   color: var(--color-pink-600);
 }
 
@@ -171,18 +219,39 @@ article.card a {
     grid-template-columns: 1fr 1fr;
     column-gap: var(--space-300);
     align-items: center;
-    margin: -64px 0;
   }
-  .hero img {
-    position: relative;
-    bottom: var(--space-800);
-    right: var(--space-300);
-    max-width: unset;
-    width: 200%;
+  .badge__value {
+    font: var(--font-extrabold-xl);
   }
+
+  .hero__decoration {
+    position: absolute;
+    right: 29%;
+    bottom: 6.5%;
+    background: var(--gradient-purple);
+    width: 66%;
+    aspect-ratio: 1 / 3;
+    transform: rotate(45deg);
+    transform-origin: bottom right;
+    z-index: -1;
+  }
+
+  .hero__illustration picture {
+    width: 66%;
+  }
+  .hero__illustration .badge--members {
+    bottom: 85%;
+    right: 5%;
+  }
+
+  .hero__illustration .badge--hours {
+    left: 5%;
+    top: 85%;
+  }
+
   .content {
     grid-template-columns: 1fr 1fr;
-    padding-top: var(--space-550);
+    padding-top: var(--space-800);
     padding-bottom: var(--space-1800);
   }
 }
