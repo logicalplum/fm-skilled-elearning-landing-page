@@ -24,6 +24,7 @@
   --space-200: 16px;
   --space-250: 20px;
   --space-300: 24px;
+  --space-350: 28px;
   --space-400: 32px;
   --space-500: 40px;
   --space-550: 44px;
@@ -57,6 +58,7 @@ html {
   width: 100%;
   max-width: 1440px;
   padding: 0 var(--space-250);
+  overflow-x: hidden; /* hide illustration overflow */
 }
 
 .btn {
@@ -163,6 +165,25 @@ article.card a {
 @media (min-width: 768px) {
   .container {
     padding: 0 var(--space-550);
+  }
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-300);
+    align-items: center;
+    margin: -64px 0;
+  }
+  .hero img {
+    position: relative;
+    bottom: var(--space-800);
+    right: var(--space-300);
+    max-width: unset;
+    width: 200%;
+  }
+  .content {
+    grid-template-columns: 1fr 1fr;
+    padding-top: var(--space-550);
+    padding-bottom: var(--space-1800);
   }
 }
 
