@@ -18,7 +18,7 @@
   <body>
     <div class="container">
       <header>
-        <nav class="banner" aria-label="primary">
+        <nav class="banner padx" aria-label="primary">
           <a>
             <img class="logo" src="assets/images/logo-dark.svg" alt="skilled" />
           </a>
@@ -28,7 +28,7 @@
         </nav>
       </header>
       <main>
-        <section class="container hero">
+        <section class="padx hero">
           <div class="hero__prose">
             <h1>Maximize skill, minimize budget</h1>
             <p>
@@ -50,7 +50,7 @@
             </div>
           </div>
         </section>
-        <section class="container content">
+        <section class="content padx">
           <h2 class="card card--header">Check out our most popular courses!</h2>
           {%- for course in courses %}
           <article class="card">
@@ -62,7 +62,7 @@
           {%- endfor %}
         </section>
       </main>
-      <footer class="container bg-dark">
+      <footer class="padx bg-dark">
         <nav class="banner banner--dark">
           <a>
             <img
