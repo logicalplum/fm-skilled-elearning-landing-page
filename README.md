@@ -58,8 +58,10 @@ I should be able to:
 - Dev process:
     1. Draft HTML structure
     2. Dev CSS for mobile, then tablet, then desktop, revising HTML as needed
-    3. Check and correct accessibility issues
-    4. Test and debug deployment process
+    3. Adjust breakpoints based on design behavior
+    4. Check and correct accessibility issues
+    5. Test and debug deployment process
+    6. Write README
 
 ### Built with
 
@@ -81,7 +83,8 @@ I should be able to:
   - Color of "Get Started" button in course thumbnails
   - Color of body text in course thumbnails
   - Size of "Get Started" button in hero section increased to satisfy criteria for large text
-- **How to deploy to GitHub pages using GitHub Actions.** Again, with some help from Claude. 
+- **Responsive design breakpoints don't need to match Figma design sizes.** Setting the desktop and mobile media query breakpoints lower than the Figma design sizes can provide a better result across the variety of screen sizes.
+- **How to deploy to GitHub pages using GitHub Actions.** Again, with some help from Claude.
 
 ### Useful resources
 
