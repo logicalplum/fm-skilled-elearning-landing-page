@@ -1,31 +1,31 @@
 {
-    "name": "fm-skilled-elearning-landing-page",
-    "version": "1.0.0",
-    "description": "A solution to the Frontend Mentor challenge [Skilled e-learning landing page](https://www.frontendmentor.io/challenges/skilled-elearning-landing-page-S1ObDrZ8q) using Eleventy site generator.",
-    "scripts": {
-        "build": "eleventy"
-    },
-    "keywords": [],
-    "author": "John F MacDonald",
-    "license": "ISC",
-    "homepage": "https://github.com/logicalplum/fm-skilled-elearning-landing-page#readme",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/logicalplum/fm-skilled-elearning-landing-page"
-    },
-    "devEngines": {
-        "packageManager": {
-            "name": "pnpm",
-            "version": "12.16.1",
-            "onFail": "download"
-        }
-    },
-    "packageManager": "pnpm@12.16.1",
-    "type": "module",
-    "devDependencies": {
-        "@11ty/eleventy": "^3.1.7",
-        "@shopify/prettier-plugin-liquid": "^1.11.3",
-        "prettier": "^3.9.10",
-        "tailwindcss-preflight": "^1.1.1"
+  "name": "fm-skilled-elearning-landing-page",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "A solution to the Frontend Mentor challenge [Skilled e-learning landing page](https://www.frontendmentor.io/challenges/skilled-elearning-landing-page-S1ObDrZ8q) using Eleventy site generator.",
+  "scripts": {
+    "start": "eleventy --serve --watch",
+    "build": "eleventy"
+  },
+  "keywords": [],
+  "author": "John F MacDonald",
+  "homepage": "https://github.com/logicalplum/fm-skilled-elearning-landing-page#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/logicalplum/fm-skilled-elearning-landing-page"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "onFail": "error"
     }
+  },
+  "packageManager": "npm@11.19.0",
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.7",
+    "@shopify/prettier-plugin-liquid": "^1.11.3",
+    "prettier": "^3.9.10",
+    "tailwindcss-preflight": "^1.1.1"
+  }
 }
