@@ -35,12 +35,10 @@ jobs:
         run: npm ci
 
       - name: Build Eleventy site
-        env:
-          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
-        run: npm run build -- --pathprefix="${PAGES_BASE_PATH}/"
+        run: npm run build 
 
       - name: Upload generated site
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
