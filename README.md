@@ -1,101 +1,104 @@
-# Frontend Mentor - Skilled e-learning landing page
+# Frontend Mentor - Skilled e-learning landing page solution
 
-![Design preview for the Skilled e-learning landing page coding challenge](./preview.jpg)
+This is a solution to the [Skilled e-learning landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/skilled-elearning-landing-page-S1ObDrZ8q). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for purchasing this premium Frontend Mentor coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+  - [AI Collaboration](#ai-collaboration)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects. These premium challenges are perfect portfolio pieces, so please feel free to use what you create in your portfolio to show others.
+## Overview
 
-**To do this challenge, you need a decent understanding of HTML and CSS.**
+### The challenge
 
-## The challenge
-
-Your challenge is to build out this landing page and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout depending on their device's screen size
 - See hover states for interactive elements
+- Use a keyboard to access interactive elements
 
-### Want some support on the challenge?
+I should be able to:
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+- Keep it [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) by using a simple static site generator
+- Use GitHub Actions to deploy the site to GitHub Pages
 
-## Where to find everything
+### Screenshot
 
-Your task is to build out the project to the design file provided. You can download the Figma design file on the platform. You can download the design file on the platform. **Please be sure not to share them with anyone else.** The design download comes with a `README.md` file as well to help you get set up.
+![Site desktop screenshot](./screenshot.webp)
 
-All the required assets for this project are in the `/assets` folder. The assets are already exported for the correct screen size and optimized. Some images are reusable at multiple screen sizes, some are for specific layouts. We also include WEBP and PNG versions and different resolutions of the hero image, so you can choose to use whichever format and resolution you like or even look into letting the browser choose which image to use based on specific conditions. For this, you can look into [responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) to learn more.
+### Links
 
-The design system in the design file will give you more information about the various colors, fonts, and styles used in this project. Our fonts always come from [Google Fonts](https://fonts.google.com/).
+- Live: <https://logicalplum.github.io/fm-skilled-elearning-landing-page>
+- Code: <https://github.com/logicalplum/fm-skilled-elearning-landing-page>
 
-## Using AI coding assistants
+## My process
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+- HTML:
+  - Build with [Eleventy](https://www.11ty.dev/) to avoid duplicating HTML structures for each course thumbnail.
+  - Eleventy default liquid templating with `html` extension for the page markup and `liquid` extension for partials
+  - No build tooling other than Eleventy
+- CSS:
+  - Reset with [tailwindcss-preflight](https://github.com/grievouz/tailwindcss-preflight)
+  - Check [caniuse.com](https://caniuse.com/) for broad support
+- Fonts:
+  - Self-hosted Google font
+  - Convert to `woff2` format using [Google woff2](https://github.com/google/woff2) tooling
+- Images:
+  - Export hero image `png` files from Figma
+  - Convert to `webp` using [Google webp package](https://developers.google.com/speed/webp/)
+- Dev process:
+    1. Draft HTML structure
+    2. Dev CSS for mobile, then tablet, then desktop, revising HTML as needed
+    3. Check and correct accessibility issues
+    4. Test and debug deployment process
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+### Built with
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- Art directed images
+- [Eleventy](https://www.11ty.dev/)
+- [GitHub Actions](https://docs.github.com/en/actions)
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+### What I learned
 
-## Building your project
+- **How to set up Eleventy for a simple case.** While build system _can_ help make a complex design easier, every moving part creates a complexity that needs to be properly set up, versioned, and debugged. Though, I had used Eleventy and other build systems previously, the setup for a blog or portfolio website is overkill here, and simple examples are hard to find. With the help of Claude Code, I was able to strip the build down to Eleventy's bare essentials.
+- **How and when to use the `<picture>` element.** This challenge needed a different hero image at different screen widths, and that required use of the `<picture>` element with a `<source>` for each media query. Though `webp` is smaller than `png` or `jpeg`, it doesn't yet have universal browser support, so a `<source>` for `webp` and another for a fallback provides whichever works.
+- **What to do with a decoration that overflows the screen.** Though challenge downloads included hero image assets in both `png` and `webp` formats for mobile, tablet, and desktop screens, the tablet and desktop images included a decoration that needed to overflow the screen. The images _can_ be relatively positioned to match the Figma designs for desktop, tablet, and mobile, but those are just three points on the wide spectrum of screen width possibilities. Getting that to work well across them all is tricky. Too tricky. I chose to go back to the Figma file and export just the core hero image without the decoration or the text overlays. I then positioned those with CSS grid and position the text overlays and decoration, added separately in the HTML, relative to the core image.
+- **Colors needed to be adjusted to meet WCAG contrast requirements.** The solution deviated from the design to meet [WCAG contrast accessibility criteria](https://www.w3.org/WAI/WCAG22/quickref/#contrast-minimum):
+  - Color of "Get Started" button in course thumbnails
+  - Color of body text in course thumbnails
+  - Size of "Get Started" button in hero section increased to satisfy criteria for large text
+- **How to deploy to GitHub pages using GitHub Actions.** Again, with some help from Claude. 
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### Useful resources
 
-1. Separate the `starter-code` from the rest of this project and rename it to something meaningful for you. Initialize the codebase as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/). **⚠️ IMPORTANT ⚠️: There are already a couple of `.gitignore` files in this project. Please do not remove them or change the content of the files. If you create a brand new project, please use the `.gitignore` files provided in your new codebase. This is to avoid the accidental upload of the design files to GitHub. With these premium challenges, please be sure not to share the design files in your GitHub repo. Thanks!**
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- [Self-hosting web fonts | Google Fonts](https://fonts.google.com/knowledge/using_type/self_hosting_web_fonts)
+- [woff2 | GitHub](https://github.com/google/woff2)
+- [woff2 | Homebrew Formulae](https://formulae.brew.sh/formula/woff2#default)
+- [Colour Contrast Analyzer (CCA) | Vispero](https://vispero.com/lp/color-contrast-checker/)
+- [WebP | Google for Developers](https://developers.google.com/speed/webp/)
 
-## Deploying your project
+### AI Collaboration
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+Claude Code was used to:
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+- Advise on simplifying Eleventy build
+- Debug issues with GitHub Actions workflow for deployment to GitHub Pages
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+## Author
 
-## Create a custom `README.md`
-
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
-
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-**⚠️ IMPORTANT ⚠️: With these premium challenges, please be sure not to upload the design files to GitHub when you're submitting to the platform and sharing it around. If you've created a brand new project, the easiest way to do that is to copy across the `.gitignore` provided in this starter project.**
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-**Have fun building!** 🚀
+- Website - [John F MacDonald](https://jfmacdonald.com)
+- Frontend Mentor - [@logicalplum](https://www.frontendmentor.io/profile/logicalplum)
