@@ -10,32 +10,26 @@
       sizes="32x32"
       href="{{ '/assets/images/favicon-32x32.png' | url}}"
     />
-
     <link rel="stylesheet" href="assets/main.css" />
-
     <title>Skilled e-learning landing page | Frontend Mentor</title>
   </head>
   <body>
     <div class="container">
-      <header>
-        <nav class="banner padx" aria-label="primary">
-          <a>
-            <img class="logo" src="assets/images/logo-dark.svg" alt="skilled" />
-          </a>
-          <button class="btn btn--black" role="link" data-url="/get-started">
-            Get Started
-          </button>
-        </nav>
+      <!-- banner -->
+      <header class="banner pad-x">
+        <img class="logo" src="assets/images/logo-dark.svg" alt="skilled" />
+        <button class="cta cta--black">Get Started</button>
       </header>
       <main>
-        <section class="padx hero">
+        <!-- hero -->
+        <div class="hero pad-x">
           <div class="hero__prose">
             <h1>Maximize skill, minimize budget</h1>
             <p>
               Our modern courses across a range of in-demand skills will give
               you the knowledge you need to live the life you want.
             </p>
-            <button class="btn btn--orange" role="link">Get Started</button>
+            <button class="cta cta--orange">Get Started</button>
           </div>
           <div class="hero__illustration">
             {% include 'heroImage' %}
@@ -49,32 +43,28 @@
               <div class="badge__value">1,451</div>
             </div>
           </div>
-        </section>
-        <section class="content padx">
+        </div>
+        <!-- courses -->
+        <section class="courses pad-x">
           <h2 class="card card--header">Check out our most popular courses!</h2>
           {%- for course in courses %}
           <article class="card">
-            <img src="assets/images/{{ course.icon }}" alt="" />
-            <h3>{{ course.name }}</h3>
-            <p>{{ course.text }}</p>
-            <a class="article-link">Get Started</a>
+            <div>
+              <img src="assets/images/{{ course.icon }}" alt="" />
+              <h3>{{ course.name }}</h3>
+              <p>{{ course.text }}</p>
+            </div>
+            <button class="cta cta--course">Get Started</button>
           </article>
           {%- endfor %}
         </section>
       </main>
-      <footer class="padx bg-dark">
-        <nav class="banner banner--dark">
-          <a>
-            <img
-              class="logo"
-              src="assets/images/logo-light.svg"
-              alt="skilled"
-            />
-          </a>
-          <button class="btn btn--purple" role="link" data-url="/get-started">
-            Get Started
-          </button>
-        </nav>
+      <!-- footer -->
+      <footer class="footer pad-x">
+        <img class="logo" src="assets/images/logo-light.svg" alt="skilled" />
+        <button class="cta cta--purple" data-url="/get-started">
+          Get Started
+        </button>
       </footer>
     </div>
   </body>

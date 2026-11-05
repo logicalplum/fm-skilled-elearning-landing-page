@@ -62,17 +62,19 @@ html {
   overflow: hidden; /* hide illustration overflow */
 }
 
-.padx {
-  padding-left: var(--space-250);
-  padding-right: var(--space-250);
-}
-
-.banner {
+.banner,
+.footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: var(--space-300) var(--space-250);
 }
+.footer {
+  color: var(--color-white);
+  background: var(--color-blue-900);
+}
+
+/* Hero */
 
 .hero {
   display: grid;
@@ -89,10 +91,6 @@ html {
   margin-bottom: var(--space-300);
   font: var(--font-medium-base);
   color: var(--color-gray);
-}
-
-.hero .btn {
-  background: var(--gradient-orange);
 }
 
 .hero__illustration {
@@ -146,8 +144,11 @@ html {
   font: var(--font-extrabold-lg);
 }
 
-.content {
+/* Courses */
+
+.courses {
   display: grid;
+  align-items: stretch;
   row-gap: var(--space-750);
   column-gap: var(--space-300);
   background: var(--gradient-light);
@@ -157,6 +158,9 @@ html {
 
 .card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 15px;
 }
 
@@ -189,17 +193,33 @@ article.card p {
   margin-bottom: var(--space-300);
 }
 
-article.card a {
-  font: var(--font-bold-base);
-  color: var(--color-pink-600);
-}
+/* CTA Buttons */
 
-.btn {
+.cta {
+  width: max-content;
   padding: var(--space-200) var(--space-400);
   font: var(--font-bold-base);
   border-radius: var(--space-400);
   color: var(--color-white);
 }
+.cta--black {
+  background: var(--color-blue-900);
+}
+.cta--purple {
+  background: var(--gradient-purple);
+}
+.cta--orange {
+  background: var(--gradient-orange);
+}
+.cta--course {
+  font: var(--font-bold-base);
+  color: var(--color-pink-600);
+  text-align: left;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Utilities */
 
 .bg-light {
   background: var(--gradient-light);
@@ -207,21 +227,18 @@ article.card a {
 .bg-dark {
   background: var(--color-blue-900);
 }
-.btn--black {
-  color: var(--color-white);
-  background: var(--color-blue-900);
-}
-.btn--purple {
-  color: var(--color-white);
-  background: var(--gradient-purple);
+.pad-x {
+  padding-left: var(--space-250);
+  padding-right: var(--space-250);
 }
 
+/* Tablet */
+
 @media (min-width: 640px) {
-  .padx {
+  .pad-x {
     padding-left: var(--space-550);
     padding-right: var(--space-550);
   }
-
   .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -231,11 +248,9 @@ article.card a {
   .badge__value {
     font: var(--font-extrabold-xl);
   }
-
   .hero__illustration {
     left: 8%;
   }
-
   .hero__decoration {
     position: absolute;
     right: 29%;
@@ -247,7 +262,6 @@ article.card a {
     transform-origin: bottom right;
     z-index: -1;
   }
-
   .hero__illustration picture {
     width: 66%;
   }
@@ -255,24 +269,24 @@ article.card a {
     bottom: 85%;
     right: 5%;
   }
-
   .hero__illustration .badge--hours {
     left: 5%;
     top: 85%;
   }
 
-  .content {
+  .courses {
     grid-template-columns: 1fr 1fr;
     padding-bottom: var(--space-1800);
   }
-
   h2.card {
     padding: var(--space-800) var(--space-400);
   }
 }
 
+/* Desktop */
+
 @media (min-width: 1024px) {
-  .padx {
+  .pad-x {
     padding-left: var(--space-2000);
     padding-right: var(--space-2000);
   }
@@ -284,7 +298,6 @@ article.card a {
     bottom: 6.5%;
     width: 58%;
   }
-
   .hero__illustration picture {
     width: 58%;
   }
@@ -292,16 +305,13 @@ article.card a {
     bottom: 63%;
     right: 5%;
   }
-
   .hero__illustration .badge--hours {
     left: 5%;
     top: 63%;
   }
-
-  .content {
+  .courses {
     grid-template-columns: 1fr 1fr 1fr;
   }
-
   h2.card {
     font: var(--font-extrabold-xl);
   }
