@@ -16,10 +16,12 @@
   --font-extrabold-xl: 800 32px/1.2 "Plus Jakarta Sans", sans-serif;
   --font-extrabold-lg: 800 24px/1.2 "Plus Jakarta Sans", sans-serif;
   --font-extrabold-base: 800 20px/1.2 "Plus Jakarta Sans", sans-serif;
+  --font-bold-xl: 700 24px/1.2 "Plus Jakarta Sans", sans-serif;
+  --font-bold-base: 700 18px/1.5 "Plus Jakarta Sans", sans-serif;
+  --font-bold-sm: 700 16px/1.5 "Plus Jakarta Sans", sans-serif;
+  --font-medium-xl: 500 24px/1.2 "Plus Jakarta Sans", sans-serif;
   --font-medium-base: 500 18px/1.5 "Plus Jakarta Sans", sans-serif;
   --font-medium-xs: 500 14px/1.2 "Plus Jakarta Sans", sans-serif;
-  --font-bold-sm: 700 16px/1.5 "Plus Jakarta Sans", sans-serif;
-  --font-bold-base: 700 18px/1.5 "Plus Jakarta Sans", sans-serif;
   --space-100: 8px;
   --space-150: 12px;
   --space-200: 16px;
@@ -39,9 +41,11 @@
   --space-2000: 160px;
   --color-blue-900: #13183f;
   --color-blue-600: #666ca3;
+  --color-red-700: #da3a34;
   --color-pink-600: #f74780;
   --color-pink-300: #ffa7c3;
-  --color-gray: #83869a;
+  /* --color-gray: #83869a;  fails WCAG contrast */
+  --color-gray: #717487;
   --color-white: #ffffff;
   --color-black: #181c2c;
   --gradient-orange: linear-gradient(#ff6548, #f02aa6);
@@ -202,6 +206,14 @@ article.card p {
   border-radius: var(--space-400);
   color: var(--color-white);
 }
+.cta:hover {
+  transform: scale(1.04);
+  opacity: 0.9;
+}
+.cta:focus-visible {
+  outline: solid 3px var(--color-blue-600);
+  outline-offset: 2px;
+}
 .cta--black {
   background: var(--color-blue-900);
 }
@@ -209,11 +221,14 @@ article.card p {
   background: var(--gradient-purple);
 }
 .cta--orange {
+  /* need large text for contrast */
+  font: var(--font-medium-xl);
   background: var(--gradient-orange);
 }
 .cta--course {
   font: var(--font-bold-base);
-  color: var(--color-pink-600);
+  /* color: var(--color-pink-600); fails WCAG */
+  color: var(--color-red-700);
   text-align: left;
   padding: 0;
   border-radius: 0;
