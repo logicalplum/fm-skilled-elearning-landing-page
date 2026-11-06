@@ -81,7 +81,7 @@ I should be able to:
 - **What to do with a decoration that overflows the screen.** Though challenge downloads included hero image assets in both `png` and `webp` formats for mobile, tablet, and desktop screens, the tablet and desktop images included a decoration that needed to overflow the screen. The images _can_ be relatively positioned to match the Figma designs for desktop, tablet, and mobile, but those are just three points on the wide spectrum of screen width possibilities. Getting that to work well across them all is tricky. Too tricky. I chose to go back to the Figma file and export just the core hero image without the decoration or the text overlays. I then positioned those with CSS grid and position the text overlays and decoration, added separately in the HTML, relative to the core image.
 - **Colors needed to be adjusted to meet WCAG contrast requirements.** The solution deviated from the design to meet [WCAG contrast accessibility criteria](https://www.w3.org/WAI/WCAG22/quickref/#contrast-minimum):
   - Color of "Get Started" button in course thumbnails
-  - Color of body text in course thumbnails
+  - Color of body text in course thumbnails, the hero section, and the hero badge labels
   - Size of "Get Started" button in hero section increased to satisfy criteria for large text
 - **Responsive design breakpoints don't need to match Figma design sizes.** Setting the desktop and mobile media query breakpoints lower than the Figma design sizes can provide a better result across the variety of screen sizes.
 - **How to deploy to GitHub pages using GitHub Actions.** Again, with some help from Claude.
