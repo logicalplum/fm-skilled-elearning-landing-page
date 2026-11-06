@@ -54,7 +54,12 @@
               <h3>{{ course.name }}</h3>
               <p>{{ course.text }}</p>
             </div>
-            <button class="cta cta--course">Get Started</button>
+            <button
+              class="cta cta--course"
+              aria-label="Get started with {{course.name}}"
+            >
+              Get Started
+            </button>
           </article>
           {%- endfor %}
         </section>
@@ -62,9 +67,7 @@
       <!-- footer -->
       <footer class="footer pad-x">
         <img class="logo" src="assets/images/logo-light.svg" alt="skilled" />
-        <button class="cta cta--purple">
-          Get Started
-        </button>
+        <button class="cta cta--purple">Get Started</button>
       </footer>
     </div>
   </body>
