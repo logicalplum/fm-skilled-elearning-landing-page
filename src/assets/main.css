@@ -3,7 +3,7 @@
 @font-face {
   font-family: "Plus Jakarta Sans";
   src:
-    local("Outfit"),
+    local("Plus Jakarta Sans"),
     url(./fonts/PlusJakartaSans-VariableFont_wght.woff2) format("woff2");
   font-weight: 400 800;
   font-style: normal;
@@ -54,7 +54,7 @@
 }
 
 html {
-  font: var(--font-regular-14, initial);
+  font: var(--font-medium-base, initial);
   color: var(--color-blue-900, initial);
 }
 
